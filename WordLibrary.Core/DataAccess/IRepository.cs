@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
-using WordLibrary.Entities.Abstract;
+using WordLibrary.Core.Entities;
 
-namespace WordLibrary.DataAccess.Abstract
+namespace WordLibrary.Core.DataAccess
 {
-    public interface IRepository<T> where T :  class, IEntity, new()
+    public interface IRepository<T> where T : class, IEntity, new()
     {
         void Add(T entity);
         abstract void Update(T entity);

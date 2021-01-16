@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using WordLibrary.Entities.Abstract;
+using WordLibrary.Core.Entities;
 
 namespace WordLibrary.Entities.Concrete
 {

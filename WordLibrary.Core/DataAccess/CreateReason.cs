@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WordLibrary.DataAccess.Abstract
+namespace WordLibrary.Core.DataAccess
 {
     public enum CreateReason
     {

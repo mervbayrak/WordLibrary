@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using WordLibrary.Business.Abstract;
 using WordLibrary.Business.ValidationRules.FluentValidation;
-using WordLibrary.DataAccess.Abstract;
 using WordLibrary.Entities.Concrete;
 using WordLibrary.Core.Aspects.Postsharp;
 using WordLibrary.Core.Aspects.Postsharp.CacheAspects;
 using WordLibrary.Core.CrossCuttingConcers.Caching.Microsoft;
 using WordLibrary.Core.CrossCuttingConcers.Logging.Log4Net.Loggers;
 using WordLibrary.Core.Aspects.Postsharp.LogAspects;
+using WordLibrary.DataAccess.Abstract;
 
 namespace WordLibrary.Business.Concrete
 {
@@ -25,7 +25,7 @@ namespace WordLibrary.Business.Concrete
         ///Word
         [FluentValidationAspect(typeof(WordValidator))]
         [CacheRemoveAspect(typeof(MemoryCacheManager))]
-        public void SaveDb(Word a, CreateReason reason = CreateReason.Create)
+        public void SaveDb(Word a, Core.DataAccess.CreateReason reason = Core.DataAccess.CreateReason.Create)
         {
             _wordDal.SaveDb(a, reason);
         }
@@ -41,7 +41,7 @@ namespace WordLibrary.Business.Concrete
         }
 
         ///UserWords
-        public void SaveDb(UserWords a, CreateReason reason)
+        public void SaveDb(UserWords a, Core.DataAccess.CreateReason reason)
         {
             _userWordsDal.SaveDb(a, reason);
         }

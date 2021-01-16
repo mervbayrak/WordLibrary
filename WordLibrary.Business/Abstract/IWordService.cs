@@ -8,10 +8,10 @@ namespace WordLibrary.Business.Abstract
 {
     public interface IWordService
     {
-        void SaveDb(Word a, CreateReason reason = CreateReason.Create);
+        void SaveDb(Word a, Core.DataAccess.CreateReason reason = Core.DataAccess.CreateReason.Create);
         Word GetById(int id);
         List<Word> GetList();
-        void SaveDb(UserWords a, CreateReason reason);
+        void SaveDb(UserWords a, Core.DataAccess.CreateReason reason);
         UserWords GetUWordById(int id);
         List<UserWords> GetListByUserId(int id);
     }

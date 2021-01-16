@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
-using WordLibrary.DataAccess.Abstract;
-using WordLibrary.Entities.Abstract;
+using WordLibrary.Core.Entities;
 
-namespace WordLibrary.DataAccess.Concrete.EF
+namespace WordLibrary.Core.DataAccess.EF
 {
     public class EfRepositoryBase<TContect, TEntity> : IRepository<TEntity>
         where TContect : DbContext, new()

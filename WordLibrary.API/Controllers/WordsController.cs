@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WordLibrary.Business.Abstract;
+using WordLibrary.Core.DataAccess;
 using WordLibrary.DataAccess.Abstract;
 using WordLibrary.Entities.Concrete;
 

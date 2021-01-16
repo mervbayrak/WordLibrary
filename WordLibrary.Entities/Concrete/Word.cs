@@ -1,6 +1,6 @@
 ﻿
 using System.ComponentModel.DataAnnotations.Schema;
-using WordLibrary.Entities.Abstract;
+using WordLibrary.Core.Entities;
 
 namespace WordLibrary.Entities.Concrete
 {

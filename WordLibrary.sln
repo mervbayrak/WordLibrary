@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordLibrary.DataAccess", "W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordLibrary.Business", "WordLibrary.Business\WordLibrary.Business.csproj", "{22B917DB-915F-494D-AACC-9CAAF5B13BBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordLibrary.Core", "WordLibrary.Core\WordLibrary.Core.csproj", "{557BE16E-9689-4AF9-90B8-F93ACAABE13B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordLibrary.Business.TestCoreMs", "WordLibrary.Business.TestCoreMs\WordLibrary.Business.TestCoreMs.csproj", "{55F23A50-AA00-46EE-AE98-7D1A5E097B44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordLibrary.Core", "WordLibrary.Core\WordLibrary.Core.csproj", "{557BE16E-9689-4AF9-90B8-F93ACAABE13B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{557BE16E-9689-4AF9-90B8-F93ACAABE13B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{557BE16E-9689-4AF9-90B8-F93ACAABE13B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{557BE16E-9689-4AF9-90B8-F93ACAABE13B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55F23A50-AA00-46EE-AE98-7D1A5E097B44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55F23A50-AA00-46EE-AE98-7D1A5E097B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55F23A50-AA00-46EE-AE98-7D1A5E097B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55F23A50-AA00-46EE-AE98-7D1A5E097B44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
