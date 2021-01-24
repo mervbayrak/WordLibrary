@@ -15,6 +15,8 @@ using WordLibrary.DataAccess.Concrete.EF;
 using WordLibrary.Business.Abstract;
 using WordLibrary.Business.Concrete;
 using WordLibrary.DataAccess.Abstract;
+using AutoMapper;
+using WordLibrary.Business.Mappings.AutoMapper.Profiles;
 
 namespace WordLibrary.API
 {
@@ -34,6 +36,7 @@ namespace WordLibrary.API
             services.AddDbContext<WordDBContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Transient);
             services.AddSingleton<IWordDal, EfWordDal>();
             services.AddSingleton<IUserWordsDal, EfUserWordsDal>();
+            //services.AddSingleton<IMapper, BusinessProfile>();
             services.AddSingleton<IWordService, WordManager>();
 
             //services.AddSingleton<WordService>(provider =>

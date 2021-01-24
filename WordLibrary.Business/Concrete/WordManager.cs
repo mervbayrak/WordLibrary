@@ -10,6 +10,8 @@ using WordLibrary.Core.CrossCuttingConcers.Caching.Microsoft;
 using WordLibrary.Core.CrossCuttingConcers.Logging.Log4Net.Loggers;
 using WordLibrary.Core.Aspects.Postsharp.LogAspects;
 using WordLibrary.DataAccess.Abstract;
+using AutoMapper;
+using WordLibrary.Core.Utilities.Mappings;
 
 namespace WordLibrary.Business.Concrete
 {
@@ -17,10 +19,12 @@ namespace WordLibrary.Business.Concrete
     {
         private IWordDal _wordDal;
         private IUserWordsDal _userWordsDal;
-        public WordManager(IWordDal wordDal, IUserWordsDal userWordsDal)
+        private IMapper _mapper;
+        public WordManager(IWordDal wordDal, IUserWordsDal userWordsDal, IMapper mapper)
         {
             _wordDal = wordDal;
             _userWordsDal = userWordsDal;
+            _mapper = mapper;
         }
         ///Word
         [FluentValidationAspect(typeof(WordValidator))]
@@ -37,7 +41,13 @@ namespace WordLibrary.Business.Concrete
         [LogAspect(typeof(DatabaseLogger))]
         public List<Word> GetList()
         {
-            return _wordDal.GetList();
+            //return _wordDal.GetList();
+
+            //var words = AutoMapperHelper.MapToSameTypeList(_wordDal.GetList());
+
+
+            var words = _mapper.Map<List<Word>>(_wordDal.GetList());
+            return words;
         }
 
         ///UserWords
@@ -53,5 +63,6 @@ namespace WordLibrary.Business.Concrete
         {
             return _userWordsDal.GetList(m => m.UserId == id && m.Display);
         }
+      
     }
 }
