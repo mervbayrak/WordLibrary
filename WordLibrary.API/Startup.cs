@@ -33,15 +33,11 @@ namespace WordLibrary.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAutoMapper(typeof(BusinessProfile));
             services.AddDbContext<WordDBContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Transient);
             services.AddSingleton<IWordDal, EfWordDal>();
             services.AddSingleton<IUserWordsDal, EfUserWordsDal>();
-            //services.AddSingleton<IMapper, BusinessProfile>();
             services.AddSingleton<IWordService, WordManager>();
-
-            //services.AddSingleton<WordService>(provider =>
-            //   new WordManager(provider.GetService<IWordDal>(), provider.GetService<IUserWordsDal>()));
-
 
             services.AddCors(options =>
             {
@@ -50,11 +46,6 @@ namespace WordLibrary.API
                         .AllowAnyMethod()
                         .AllowAnyHeader());
             });
-            //services.AddCors(options =>
-            //{
-            //    options.AddPolicy("AllowOrigin",
-            //        builder => builder.WithOrigins("http://localhost:3000"));
-            //});
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -65,7 +56,6 @@ namespace WordLibrary.API
             }
 
             app.UseCors("CorsPolicy");
-            //app.UseCors(builder => builder.WithOrigins("http://localhost:3000").AllowAnyHeader());
 
             app.UseHttpsRedirection();
             app.UseRouting();

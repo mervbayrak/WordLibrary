@@ -25,10 +25,6 @@ namespace WordLibrary.DataAccess.Concrete.EF
                 context.Set<UserWords>().Update(entity);
                 context.SaveChanges();
             }
-            //if (entity.Word != null) base._context.Entry<Word>(entity.Word).State = EntityState.Detached;
-            //if (entity.User != null) base._context.Entry<User>(entity.User).State = EntityState.Detached;
-            //
-            //base._context.Set<UserWords>().Update(entity);
         }
     }
 }

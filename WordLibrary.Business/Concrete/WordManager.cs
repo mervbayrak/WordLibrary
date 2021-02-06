@@ -41,13 +41,7 @@ namespace WordLibrary.Business.Concrete
         [LogAspect(typeof(DatabaseLogger))]
         public List<Word> GetList()
         {
-            //return _wordDal.GetList();
-
-            //var words = AutoMapperHelper.MapToSameTypeList(_wordDal.GetList());
-
-
-            var words = _mapper.Map<List<Word>>(_wordDal.GetList());
-            return words;
+            return  _mapper.Map<List<Word>>(_wordDal.GetList());
         }
 
         ///UserWords

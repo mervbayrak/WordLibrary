@@ -11,8 +11,8 @@ namespace WordLibrary.DataAccess.Concrete.EF.Mappings
     {
         public void Configure(EntityTypeBuilder<Word> builder)
         {
-            builder.ToTable(@"Word",@"dbo");
-            builder.HasKey(x=>x.Id);
+            builder.ToTable(@"Word", @"dbo");
+            builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName("Id");
         }
     }

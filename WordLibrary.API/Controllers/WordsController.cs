@@ -35,8 +35,8 @@ namespace WordLibrary.API.Controllers
         public ActionResult GetUserWords()
         {
             var lst = _wordService.GetListByUserId(1);
-            var minDisplay = lst.Min(m=>m.DisplayCount);//Default değer olarak atandı
-            //Sadece 1 değer gelmelidir.
+            var minDisplay = lst.Min(m => m.DisplayCount);
+
             var uWord = lst.Where(m => m.DisplayCount == minDisplay).FirstOrDefault();
 
             return Ok(uWord);
@@ -45,17 +45,16 @@ namespace WordLibrary.API.Controllers
         [Route("addUserWord")]
         public ActionResult Add([FromBody] UserWords uWord)
         {
-            //_wordService.SaveDb(uWord.Word, CreateReason.Create);
-            //uWord.WordId = uWord.Word.Id;
             _wordService.SaveDb(uWord, CreateReason.Create);
             return Ok(uWord);
         }
         [HttpPost]
-        [Route("update")]
+        [Route("updateUserWord")]
         public ActionResult Update([FromBody] UserWords uWord)
         {
             _wordService.SaveDb(uWord, CreateReason.Update);
             return Ok(uWord);
         }
     }
+
 }
